@@ -60,21 +60,3 @@ export const authSlice = createSlice({
 export const { setMode, setLogin, setLogout, setFriends, setPosts, setPost } =
   authSlice.actions;
 export default authSlice.reducer;
-
-
-/*user: {
-  _id: "63e6d7615cc3144ba7329fae",
-  firstName: "name",
-  lastName: "lastname",
-  email: "email@email.com",
-  password: "$2b$10$gsSV7HfKgvgRP83sKVj1KuAJMFNZAWYXXJg4JGvSXKGA30rMIT/ye",
-  picturePath: "p3.png",
-  friends: [],
-  location: "fake location",
-  occupation: "fake occupation",
-  viewedProfile: 6888,
-  impressions: 7569,
-  createdAt: "2023-02-10T23:46:41.587+00:00",
-  updatedAt: "2023-02-10T23:46:41.587+00:00",
-  __v: 0
-},*/
