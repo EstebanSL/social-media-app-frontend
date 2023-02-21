@@ -8,9 +8,9 @@ import { Box, Divider, Typography, useTheme } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { UserImageWidget } from '../../widgets/userImageWidget/UserImageWidget';
-import WidgetWrapper from '../../widgets/widgetWrapper/WidgetWrapper';
-import FlexBetween from '../flexBteween/FlexBetween';
+import { UserImageWidget } from '../userImageWidget/UserImageWidget';
+import WidgetWrapper from '../widgetWrapper/WidgetWrapper';
+import FlexBetween from '../../components/flexBteween/FlexBetween';
 
 export const UserWidget = ({ userId, picturePath }) => {
   const [user, setUser] = useState(null);
