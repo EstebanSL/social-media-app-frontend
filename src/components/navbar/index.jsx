@@ -26,19 +26,46 @@ import { useNavigate } from 'react-router-dom';
 import FlexBetween from '../flexBteween/FlexBetween';
 
 export const Navbar = () => {
+  /**
+   * Defines if the mobile menu is toggled
+   */
   const [isMobileMenuToggle, setMobileMenuToggle] = useState(false);
 
+  /**
+   * Dispatch actions of the redux state
+   */
   const dispatch = useDispatch();
+
+  /**
+   * Change location route
+   */
   const navigate = useNavigate();
+
+  /**
+   * Stores the user logged user information
+   */
   const user = useSelector((state) => state.auth.user);
-  const isNonMobileScreen = useMediaQuery('(min-width: 768px)');
+
+  /**
+   * Defines if the screen size is less than 1000px
+   */
+  const isNonMobileScreen = useMediaQuery('(min-width: 1000px)');
+
+  /** store the defined theme */
   const theme = useTheme();
+
+  /**
+   * Theme colors
+   */
   const neutralLight = theme.palette.neutral.light;
-  const dark = theme.palette.dark;
+  const dark = theme.palette.primary.dark;
   const background = theme.palette.background.default;
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
+  /**
+   * Stores the logged user fullname
+   */
   const fullName = `${user.firstName} ${user.lastName}`;
 
   return (
@@ -51,7 +78,7 @@ export const Navbar = () => {
           onClick={() => navigate('/home')}
           sx={{
             '&:hover': {
-              color: primaryLight,
+              color: dark,
               cursor: 'pointer',
             },
           }}

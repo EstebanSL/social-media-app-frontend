@@ -7,7 +7,6 @@ import {
   useTheme,
   TextField,
 } from '@mui/material';
-import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -15,6 +14,7 @@ import { setLogin } from '../../state';
 import FlexBetween from '../../components/flexBteween/FlexBetween';
 import Dropzone from 'react-dropzone';
 import { Formik } from 'formik';
+import { EditOutlined } from '@mui/icons-material';
 
 const registerSchema = yup.object().shape({
   firstName: yup.string().required('required'),
@@ -53,7 +53,7 @@ export const Form = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const isNonMobile = useMediaQuery('(min-width: 768px)');
+  const isNonMobile = useMediaQuery('(min-width: 1000px)');
   const isLogin = pageType === 'login';
   const isRegister = pageType === 'register';
 
@@ -127,7 +127,7 @@ export const Form = () => {
         <form onSubmit={handleSubmit}>
           <Box
             display="grid"
-            gap="30px"
+            gap="1rem"
             gridTemplateColumns="repeat(4, minmax(0, 1fr))"
             sx={{
               '& > div': {
@@ -209,7 +209,7 @@ export const Form = () => {
                         ) : (
                           <FlexBetween>
                             <Typography>{values.picture.name}</Typography>
-                            <EditOutlinedIcon />
+                            <EditOutlined />
                           </FlexBetween>
                         )}
                       </Box>
